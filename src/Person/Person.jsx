@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 
 class Person extends Component {
-  render(props) {
+  render() {
+    const {click, name, age, children, changed} = this.props;
+    
     return (
       <div>
-        <h1 onClick={this.props.click}>
-          I am {this.props.name} and I am {this.props.age} years old
+        <h1 onClick={click}>
+          I am {name} and I am {age} years old
         </h1>
         <p>{this.props.children}</p>
         <input
           type="text"
-          onChange={this.props.changed}
-          value={this.props.name}
+          onChange={changed}
+          value={name}
         />
       </div>
     );
